@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card span {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 250px;
+    display: block;
+    background: #000;
+    border-radius: 50%;
+    transform-origin: 125px 0;
+    transform: rotate(calc(90deg * var(--i)));
+    filter: blur(80px);
+    opacity: 0.75;
+}
+
+.card span:nth-child(1) {
+    background: #01b2fe;
+}
+.card span:nth-child(2) {
+    background: #ff008c;
+}
+.card span:nth-child(3) {
+    background: #ffcd00;
+}
+.card span:nth-child(4) {
+    background: #00c456;
+}
+
+.card .glass {
+    position: absolute;
+    width: 450px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    border: 1px solid #fff;
+}
+
+.glass {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.glass h1 {
+    font-size: 25 px;
+    color: rgba(158, 30, 115, 0.5);
+}
+
+.glass button {
+    background: rgba(255, 255, 255, 0.5);
+    font-weight: 400px;
+    font-size: 30px;
+    mix-blend-mode: difference;
+    background-color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}

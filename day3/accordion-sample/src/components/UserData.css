@@ -1,0 +1,28 @@
+.container {
+    margin-top: 85px;
+    text-align: start;
+    line-height: 38px;
+    border: 1px solid rgba(187, 182, 182, 0.541);
+  background: transparent;
+
+}
+.container h2,
+p {
+    text-align: center;
+    line-height: 20px;
+}
+#root .delete {
+    background-color: #443f3f5b;
+    border: none;
+    padding: 6px 10px ;
+    font-size: 12px;
+    border-radius: 50%;
+    
+}
+
+#root .delete:hover {
+    background-color: #1b1b1b;
+    color: rgb(211, 60, 60);
+    
+    border:none;
+}
