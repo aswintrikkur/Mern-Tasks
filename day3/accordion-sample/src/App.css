@@ -1,7 +1,8 @@
 #root {
   max-width: 1280px;
+  max-width: 100%;
   min-width: 55%;
-  margin: 0 auto;
+  margin: 0 auto ;
   padding:  0 2rem;
   text-align: center;
 }
@@ -21,6 +22,9 @@ body{
   font-size: 14px;
   border-radius: 5px;
 }
+.menu-btn{
+  background-color: transparent;
+}
 #root button:hover{
   background-color: #201f1f;
   border:  white 1px solid;
@@ -28,13 +32,18 @@ body{
 .btn-container{
   background-color: #242424;
   width: 100%;
-  padding:  15px 0px 15px 0px ;
-  border-bottom:  1px solid rgba(255, 255, 255, 0.671);
-  border-bottom-style: dashed;
+  padding:  8px 0px 24px 0px ;
+  /* border-bottom:  1px solid rgba(255, 255, 255, 0.671); */
+  /* border-bottom-style: dashed; */
 
   display:inline-flex;
   justify-content: center;
   position: fixed;
   transform: translate(-50%);
   gap: 8px;  
+
+}
+.app-container{
+  /* width: 100%; */
+/* background-color: rgba(95, 91, 91, 0.171); */
 }

@@ -1,0 +1,12 @@
+/* #root {
+    padding: 0%;
+    margin: 0%;
+} */
+.container-faq {
+    /* width: 100%; */
+    /* height: 100vh; */
+}
+.container-faq #img {
+    height: 240px;
+    width: 1200px;
+}

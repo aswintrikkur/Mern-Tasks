@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useTransition } from "react";
 import "./App.css";
 import { UserData } from "./components/UserData";
 import { Accordion } from "./components/Accordion";
@@ -10,6 +10,7 @@ function App() {
     const [btnToggle, setBtnToggle] = useState({
         /* key & values are set to object using the onHandle()*/
     });
+    const [show, setShow] = useState(true);
 
     const onHandle = (keyName) => {
         console.log(keyName);
@@ -29,34 +30,45 @@ function App() {
     console.log(btnToggle); //to check current key&values
 
     return (
-        <>
-            <div className="btn-container">
+        <div className="app-container">
+            
+            <i class="fa-solid fa-bars fa-sm"></i>
+            <div
+                className="btn-container"
+                onMouseOver={() => {
+                    setShow(true);
+                }}
+                onMouseLeave={() => {
+                    setShow(false);
+                }}
+                // style={{ visibility: show ? "visible" : "hidden" }}
+                style={{ translate: show ? "0px" : "0px -55px", background: show ? " linear-gradient(180deg, rgb(0, 0, 0),transparent)" : "none" }}
+            >
                 <button
                     onClick={() => onHandle("userData")}
-                    style={{ backgroundColor: color === "userData" ? "black" :"gray" }}
+                    style={{ backgroundColor: color === "userData" ? "black" : "gray" }}
                 >
                     User-Data
                 </button>
                 <button
                     onClick={() => onHandle("accordion")}
-                    style={{ backgroundColor: color === "accordion" ? "black" :"gray" }}
+                    style={{ backgroundColor: color === "accordion" ? "black" : "gray" }}
                 >
                     Accordion
                 </button>
                 <button
                     onClick={() => onHandle("carousel")}
-                    style={{ backgroundColor: color === "carousel" ?  "black" :"gray" }}
+                    style={{ backgroundColor: color === "carousel" ? "black" : "gray" }}
                 >
                     Carousel
                 </button>
             </div>
-
             <div className="display-contanier">
                 {btnToggle.userData && <UserData />} {/* terinary operator___simplified_syntax */}
                 {btnToggle.accordion && <Accordion />}
                 {btnToggle.carousel && <Carousel />}
             </div>
-        </>
+        </div>
     );
 }
 
