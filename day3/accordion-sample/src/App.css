@@ -1,15 +1,16 @@
 #root {
-  max-width: 1280px;
+  /* min-width: 1280px; */
   max-width: 100%;
   min-width: 55%;
   margin: 0 auto ;
   padding:  0 2rem;
   text-align: center;
+  box-sizing: border-box;
 }
 body{
-  background: linear-gradient(90deg, rgb(0, 0, 0),transparent);
+  background: linear-gradient(125deg, rgba(0, 0, 0, 0.623),rgba(112, 111, 111, 0.363));
   /* height: 100vh; */
-  /* overflow: scroll; */
+  /* overflow: auto; */
   /* background: fixed; */
 
 }
@@ -32,7 +33,7 @@ body{
 .btn-container{
   background-color: #242424;
   width: 100%;
-  padding:  8px 0px 24px 0px ;
+  padding:  10px 0px 28px 0px ;
   /* border-bottom:  1px solid rgba(255, 255, 255, 0.671); */
   /* border-bottom-style: dashed; */
 
@@ -44,6 +45,5 @@ body{
 
 }
 .app-container{
-  /* width: 100%; */
-/* background-color: rgba(95, 91, 91, 0.171); */
+
 }

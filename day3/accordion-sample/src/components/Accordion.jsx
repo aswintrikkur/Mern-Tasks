@@ -8,8 +8,8 @@ export function Accordion() {
     return (
         <>
             <div className="container-faq">
-                {/* <h1>helloworld</h1> */}
                 <img id="img" src="../../src/images/faq.png" alt="faq imag" />
+                <h1>FAQ</h1>
               <p></p>
 
             </div>

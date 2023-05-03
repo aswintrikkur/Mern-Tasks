@@ -31,8 +31,7 @@ function App() {
 
     return (
         <div className="app-container">
-            
-            <i class="fa-solid fa-bars fa-sm"></i>
+            <i className="fa-solid fa-bars fa-lg"></i>
             <div
                 className="btn-container"
                 onMouseOver={() => {
@@ -42,7 +41,10 @@ function App() {
                     setShow(false);
                 }}
                 // style={{ visibility: show ? "visible" : "hidden" }}
-                style={{ translate: show ? "0px" : "0px -55px", background: show ? " linear-gradient(180deg, rgb(0, 0, 0),transparent)" : "none" }}
+                style={{
+                    translate: show ? "0px" : "0px -55px",
+                    background: show ? " linear-gradient(180deg, rgb(0, 0, 0),transparent)" : "none",
+                }}
             >
                 <button
                     onClick={() => onHandle("userData")}
