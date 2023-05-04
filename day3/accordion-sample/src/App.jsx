@@ -67,7 +67,7 @@ function App() {
             </div>
             <div className="display-contanier">
                 {btnToggle.userData && <UserData />} {/* terinary operator___simplified_syntax */}
-                {btnToggle.accordion && <Accordion />}
+                {btnToggle.accordion && <Accordion/> }
                 {btnToggle.carousel && <Carousel />}
             </div>
         </div>

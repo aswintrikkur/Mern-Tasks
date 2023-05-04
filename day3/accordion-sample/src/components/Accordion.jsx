@@ -1,4 +1,3 @@
-// import React from 'react'
 import { useState } from "react";
 import "./Accordion.css";
 
@@ -67,23 +66,24 @@ Database Front End Deployment`,
     const [currentId, setCurrentId] = useState("");
 
     const onHandle = (dataId) => {
-        if (dataId == currentId) {
-            setCurrentId("");
-            return;
-        }
-        setCurrentId(dataId);
+        // if (dataId == currentId) {
+        //     setCurrentId("");
+        //     return;
+        // }
+        // setCurrentId(dataId);
+        setCurrentId(currentId===dataId?"":dataId);     //it work same as the above if condition
     };
 
     return (
         <>
             <div className="container-faq">
                 <img id="img" src="../../src/images/faq.png" alt="faq imag" />
-                
+
                 <div className="faq-section">
-                <h1>Course Details</h1>
+                    <h1>Course Details</h1>
                     {faq.map((data, index) => (
                         // console.log(data, index); // console.log("element==",data.title);
-                                <>
+                        <>
                             <div key={data.id} className="faq1" onClick={() => onHandle(data.id)}>
                                 <h6> {data.title}</h6>
                                 {data.id === currentId ? (
@@ -92,8 +92,8 @@ Database Front End Deployment`,
                                     <i className="fa-solid fa-caret-down"></i>
                                 )}
                             </div>
-                            {/* {console.log("loop count:",data.id)} */}
                             {data.id === currentId && <pre className="content-box">{data.content} </pre>}
+                            {/* displaying the content based on which div is selected */}
                         </>
                     ))}
                 </div>
