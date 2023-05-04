@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-export function Title() {
+export function Title(props) {
     // useEffect(() => {
     //     console.log("useEffect rendering");
     //     setInterval(() => {
@@ -10,8 +10,8 @@ export function Title() {
 
     return (
         <div>
-            <h1>Welcome Users</h1>
+            <h2>{props.content}</h2>
             {/* <button> </button> */}
         </div>
-    )
+    );
 }

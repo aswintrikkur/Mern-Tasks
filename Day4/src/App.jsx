@@ -7,6 +7,7 @@ function App() {
         component1: true,
         component2: true,
     });
+    // const [titleValue, setTitleValue]=useState(["hi"]);
     // console.log(toggle.component1);
     const onHandle = (event) => {
         setToggle({
@@ -20,14 +21,21 @@ function App() {
 
     return (
         <>
-            <button onClick={onHandle} name="component1">
-                Toggle1
-            </button>
-            {toggle.component1 && <Title />}
-            <button onClick={onHandle} name="component2">
-                Toggle2
-            </button>
-            {toggle.component2 && <h1>helloWorld</h1>}
+            <div className="title-container-main">
+                <div className="title-container">
+                    <button onClick={onHandle} name="component1">
+                        Toggle1
+                    </button>
+                    {toggle.component1 && <Title content="user1" />}
+                </div>
+                
+                <div className="title-container">
+                    <button onClick={onHandle} name="component2">
+                        Toggle2
+                    </button>
+                    {toggle.component2 && <Title content="user2" />}
+                </div>
+            </div>
         </>
     );
 }
