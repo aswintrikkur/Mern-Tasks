@@ -12,28 +12,34 @@
     background-repeat: round;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-  }
-.title-container-main button{
-  background-color: rgba(235, 147, 115, 0.493);
-  border: 1px black dotted;
 }
-  .title-container {
-  margin-top: 100px;
+.title-container-main button {
+    background: linear-gradient(90deg, rgba(235, 147, 115, 0.493), rgba(167, 154, 150, 0.493));
+  margin-top: 50px;
+  color: rgba(0, 0, 0, 0.607);
+    border: 1px black dotted;
+}
+.title-container {
+    margin-top: 210px;
     /* max-width: 800px; */
     min-height: 200px;
+
     /* background-color: rgba(95, 158, 160, 0.418); */
 }
 .timer-container {
     /* background-color: #fff; */
+    margin: 0;
 }
 .timer-container button {
     width: 80px;
     height: 80px;
+    background: rgba(119, 114, 109, 0.568);
+    color: rgb(247, 219, 219);
     border-radius: 50%;
-    background: rgb(148, 148, 148);
-    border:  none;
+    margin-bottom: 30px;
+    border: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -42,13 +48,38 @@
     font-size: 18px;
     font-weight: 700;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(253, 206, 189);
-  }
-  .content {
+    /* color: rgb(253, 206, 189); */
+}
+.content {
     font-size: 120px;
     font-weight: 900;
-    /* letter-spacing: 10px; */
-    font-stretch: ultra-expanded;
-    color: rgba(110, 101, 97, 0.432);
-
+    margin: 0;
+    padding: 0;
+    color: rgba(110, 101, 97, 0.232);
+    display: inline-flex;
+}
+.timer-container button:focus {
+    border: white 1px solid;
+}
+.loading {
+    height: 36px;
+    width: 1000px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.155);
+    color: black;
+    display: flex;
+    overflow: hidden;
+  }
+  .time {
+    width: 35px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #ffffff49;
+    padding-left: 5px;
+    padding-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
 }
