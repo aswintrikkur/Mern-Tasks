@@ -1,21 +1,54 @@
 #root {
     max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+    margin: 0;
+    padding: 0;
     text-align: center;
 }
 .title-container-main {
-    width: 700px;
-    height: 450px;
-    background-color: rgba(95, 158, 160, 0.418);
-    border-radius: 20px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./images/pexels-tyler-lastovich-1616516.jpg");
+    background-size: contain;
+    background-repeat: round;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+.title-container-main button{
+  background-color: rgba(235, 147, 115, 0.493);
+  border: 1px black dotted;
 }
-.title-container {
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
-    margin-left: 10px;
+  .title-container {
+  margin-top: 100px;
+    /* max-width: 800px; */
+    min-height: 200px;
+    /* background-color: rgba(95, 158, 160, 0.418); */
+}
+.timer-container {
+    /* background-color: #fff; */
+}
+.timer-container button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgb(148, 148, 148);
+    border:  none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.timer-container button h4 {
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(253, 206, 189);
+  }
+  .content {
+    font-size: 120px;
+    font-weight: 900;
+    /* letter-spacing: 10px; */
+    font-stretch: ultra-expanded;
+    color: rgba(110, 101, 97, 0.432);
+
 }

@@ -22,19 +22,10 @@ function App() {
     return (
         <>
             <div className="title-container-main">
-                <div className="title-container">
-                    <button onClick={onHandle} name="component1">
-                        Toggle1
-                    </button>
-                    {toggle.component1 && <Title content="user1" />}
-                </div>
-                
-                <div className="title-container">
-                    <button onClick={onHandle} name="component2">
-                        Toggle2
-                    </button>
-                    {toggle.component2 && <Title content="user2" />}
-                </div>
+                <button onClick={onHandle} name="component1">
+                    Toggle1
+                </button>
+                <div className="title-container">{toggle.component1 && <Title content="helloWorld" />}</div>
             </div>
         </>
     );
