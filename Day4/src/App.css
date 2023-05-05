@@ -5,16 +5,17 @@
     text-align: center;
 }
 .title-container-main {
-  width: 700px;
-  height: 450px;
-  background-color: rgba(95, 158, 160, 0.418);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 700px;
+    height: 450px;
+    background-color: rgba(95, 158, 160, 0.418);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .title-container {
     width: 200px;
     height: 200px;
     border: 1px solid black;
-
+    margin-left: 10px;
 }
