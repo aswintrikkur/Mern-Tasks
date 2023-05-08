@@ -22,7 +22,9 @@ a {
 a:hover {
   color: #535bf2;
 }
-
+label{
+  cursor: pointer;
+}
 body {
   margin: 0;
   display: flex;

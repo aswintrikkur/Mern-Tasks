@@ -6,49 +6,71 @@ export function Form() {
     return (
         <div>
             <div className="container">
-                <h2>Sign-up Form</h2>
+                <h2>Signup Form</h2>
                 <div className="form-body">
-                    <form action="submit">
-                        <div className="form-row row1">
-                            <label htmlFor="">First name</label>
-                            <input type="text" name='firstName'/>
+                    <div className="form-row">
+                        <div className="form-key">
+                            <label>First Name</label>
                         </div>
-                        <div className="form-row row1">
-                            <label htmlFor="">Email</label>
-                            <input type="Email" />
+                        <div className="form-value value1">
+                            <input type="text" name="firstName" />
                         </div>
-                        <div className="form-row">
-                            <label htmlFor="">Gender</label>
-                            <div className="gender-value">
-                                <label htmlFor="male"> male</label>
-                                <input type="radio" id="male" value="male" name="gender" />
-                                <label htmlFor="female">Female </label>
-                                <input type="radio" id="female" value="female" name="gender" />
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-key">
+                            <label>Email</label>
+                        </div>
+                        <div className="form-value value1">
+                            <input type="text" name="email" />
+                        </div>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-key">
+                            <label>Gender</label>
+                        </div>
+                        <div className="form-value">
+                            <input type="radio" id="male" value="male" name="gender" />
+                            <label htmlFor="male"> Male</label>
+                            <input type="radio" id="female" value="female" name="gender" />
+                            <label htmlFor="female">Female </label>
+                        </div>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-key">
+                            <label>Skills</label>
+                        </div>
+                        <div className="form-value skills-value">
+                            <div className="skills-col">
+                                <div>
+                                    <input type="checkbox" id="html" name="skills" value="html" />
+                                    <label htmlFor="html">HTML </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="css" name="skills" value="css" />
+                                    <label htmlFor="css">CSS </label>
+                                </div>
+                            </div>
+                            <div className="skills-col">
+                                <div>
+                                    <input type="checkbox" id="javascript" name="skills" value="javascript" />
+                                    <label htmlFor="javascript">Javascript </label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="php" name="skills" value="php" />
+                                    <label htmlFor="php">PHP </label>
+                                </div>
                             </div>
                         </div>
-                        <div className="form-row row-dob">
-                            <label htmlFor="dob">DOB</label>
-                            <input type="date" name="" id="" />
-                        </div>
-                        <div className="form-row row-skills">
-                            <label htmlFor="">Skills</label>
-                            {/* <div> */}
-                            <div className="row-skills-inner">
-                                <label htmlFor="html">HTML </label>
-                                <input type="checkbox" id="html" name="skills" value="html" />
-                            </div>
-                            <div className="row-skills-inner">
-                                <label htmlFor="css">CSS </label>
-                                <input type="checkbox" id="css" name="skills" value="css" />
-                            </div>
-                            <div className="row-skills-inner">
-                                <label htmlFor="javascript">Javascript </label>
-                                <input type="checkbox" id="javascript" name="skills" value="javascript" />
-                            </div>
-                            {/* </div> */}
-                        </div>
-                        <div className="form-row">
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-key">
                             <label htmlFor="">Country</label>
+                        </div>
+                        <div className="form-value country-value">
                             <select name="country" id="country">
                                 <option value="">select</option>
                                 <option value="india">India</option>
@@ -56,8 +78,10 @@ export function Form() {
                                 <option value="canada">canada</option>
                             </select>
                         </div>
-                        <button>Sign-up</button>
-                    </form>
+                    </div>
+                    <div className=" row-signup">
+                        <button>Signup</button>
+                    </div>
                 </div>
             </div>
         </div>
