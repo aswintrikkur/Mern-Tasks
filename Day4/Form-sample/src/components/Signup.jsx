@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export function Form() {
+export function Signup({closeButton}) {
     // state declaration
     const [field, setField] = useState({
         firstName: "",
@@ -8,6 +8,7 @@ export function Form() {
         gender: "",
         skills: [],
         country: "",
+        password: "",
     });
 
     // function definition
@@ -16,34 +17,42 @@ export function Form() {
     };
     const handleChange = (event) => {
         if (event.target.name === "skills") {
-            // setField({ ...field, ...field.skills, [event.target.name]: [event.target.name].push(event.target.value) });
             setField({ [event.target.name]: [...field.skills, event.target.value] });
-            // console.log(event);
         }
         setField({ ...field, [event.target.name]: event.target.value });
     };
     console.log(field);
+ 
+    const closeForm = (event) => {
+        // console.log(closeButton);
+        closeButton(false);
+        // console.log(props.closeButton.newUser);
+    };
+    // console.log(props.closeButton.newUser);
 
     return (
         <div>
             <form onSubmit={handleSubmit} className="container">
+                <div className="close-btn">
+                    <button name="existingUser" onClick={closeForm}>X</button>
+                </div>
                 <h2>Signup Form</h2>
                 <div className="form-body">
                     <div className="form-row">
                         <div className="form-key">
-                            <label>First Name</label>
+                            <label htmlFor="firstName">First Name</label>
                         </div>
                         <div className="form-value value1">
-                            <input type="text" name="firstName" onChange={handleChange} />
+                            <input type="text" id="firstName" name="firstName" onChange={handleChange} />
                         </div>
                     </div>
 
                     <div className="form-row">
                         <div className="form-key">
-                            <label>Email</label>
+                            <label htmlFor="email">Email</label>
                         </div>
                         <div className="form-value value1">
-                            <input type="text" name="email" onChange={handleChange} />
+                            <input type="text" id="email" name="email" onChange={handleChange} />
                         </div>
                     </div>
 
@@ -106,6 +115,25 @@ export function Form() {
                             </select>
                         </div>
                     </div>
+
+                    <div className="form-row">
+                        <div className="form-key">
+                            <label htmlFor="password">password</label>
+                        </div>
+                        <div className="form-value value1">
+                            <input type="password" id="password" name="password" onChange={handleChange} />
+                        </div>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="form-key">
+                            <label htmlFor="">confirm password</label>
+                        </div>
+                        <div className="form-value value1">
+                            <input type="password" id="" name="" onChange={handleChange} />
+                        </div>
+                    </div>
+
                     <div className=" row-signup">
                         <button>Signup</button>
                     </div>
