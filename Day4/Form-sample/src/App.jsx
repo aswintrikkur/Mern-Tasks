@@ -4,16 +4,16 @@ import { Signup } from "./components/Signup";
 import { Login } from "./components/Login";
 
 function App() {
+    // state
     const [user, setUser] = useState({
         newUser: false,
         existingUser: false,
     });
+
+    //function declaration
     const handleToggle = (event) => {
-        // console.log(user.newUser);
-        // console.log([event.target.name]);
-        // console.log([event.target.value]);
         if (event == false) {
-            console.log(event);
+            // console.log(event);
             setUser({ newUser: false, existingUser: false });
         } else {
             setUser({ ...user, [event.target.name]: event.target.value == "false" ? true : false });

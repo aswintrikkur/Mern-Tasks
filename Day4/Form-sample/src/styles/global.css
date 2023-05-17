@@ -1,0 +1,8 @@
+/* import this file in 'main.jsx' instead of 'index.css'  */
+/* do the global styling here */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export function Signup({closeButton}) {
+export function Signup({ closeButton }) {
     // state declaration
     const [field, setField] = useState({
         firstName: "",
@@ -17,16 +17,17 @@ export function Signup({closeButton}) {
     };
     const handleChange = (event) => {
         if (event.target.name === "skills") {
-            setField({ [event.target.name]: [...field.skills, event.target.value] });
+            console.log("skills selected");
+            setField({ ...field, [event.target.name]: [...field.skills, event.target.value] });
+            return;
         }
         setField({ ...field, [event.target.name]: event.target.value });
     };
     console.log(field);
- 
+
     const closeForm = (event) => {
         // console.log(closeButton);
-        closeButton(false);
-        // console.log(props.closeButton.newUser);
+        closeButton(false); //toggle btn
     };
     // console.log(props.closeButton.newUser);
 
@@ -34,7 +35,9 @@ export function Signup({closeButton}) {
         <div>
             <form onSubmit={handleSubmit} className="container">
                 <div className="close-btn">
-                    <button name="existingUser" onClick={closeForm}>X</button>
+                    <button name="existingUser" onClick={closeForm}>
+                        X
+                    </button>
                 </div>
                 <h2>Signup Form</h2>
                 <div className="form-body">
