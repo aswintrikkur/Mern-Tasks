@@ -1,5 +1,5 @@
-*{
- box-sizing: border-box;   
+* {
+    box-sizing: border-box;
     padding: 0%;
     margin: 0;
 }
@@ -7,61 +7,57 @@
     /* max-width: 1280px; */
     margin: 0 auto;
     text-align: center;
-    box-sizing: border-box;
-    background:url(./images/quest_2-wallpaper-1366x768.jpg);
+    background: url(./images/quest_2-wallpaper-1366x768.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
-.app-container{
+.app-container {
     width: 100vw;
-    height: 100vh;
-     background: linear-gradient(rgba(0, 0, 0, 0.3),transparent);
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), transparent);
     /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9); */
-    filter: brightness(.8) contrast(1.2)  ; 
+    filter: brightness(0.8) contrast(1.2);
     display: flex;
     flex-direction: column;
-    padding: 8rem;
-    /* padding-top: 8rem; */
+    padding: 8rem 8rem 0 8rem;
 }
-.app-container .home{
-
-line-height: 30px;
+.app-container .home {
+    line-height: 30px;
 }
-.app-container .home button{
+.app-container .home button {
     margin-left: 20px;
-background-color: transparent;
-border: none;
-border-bottom: 1px solid black;
-color: black;
-font-family: monospace;
-font-weight: 600;   
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    color: black;
+    font-family: monospace;
+    font-weight: 600;
 }
 .container {
     border: 1px solid rgba(255, 255, 255, 0.644);
-    width: 600px;
+    max-width: 600px;
     padding-top: 20px;
     border-radius: 5%;
 }
-.login-container{
+.login-container {
     margin-left: auto;
 }
-.close-btn{
+.close-btn {
     text-align: end;
     padding-right: 20px;
 }
-.close-btn button{
-    border: .1px solid white;
-background-color: red;
-/* color: black; */
-width: 22px;
-height: 22px;
-border-radius: 3px;
+.close-btn button {
+    border: 0.1px solid white;
+    background-color: red;
+    /* color: black; */
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
 }
-.container h2{
+.container h2 {
     font-size: 36px;
     color: rgba(0, 0, 0, 0.74);
-
 }
 .form-body {
     text-align: center;
@@ -69,7 +65,7 @@ border-radius: 3px;
     padding: 5px 5px 10px 5px;
     width: 94%;
     margin: 15px auto 5px;
-    
+
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -77,56 +73,64 @@ border-radius: 3px;
 .form-row {
     text-align: start;
     display: flex;
+    /* flex-direction: column; */
     align-items: start;
     gap: 35px;
     padding-left: 10px;
     background-color: #3c506346;
     border-radius: 4px;
-
 }
 .form-key {
     flex: 2.5;
-    border-right: .1px solid rgba(255, 255, 255, 0.185) ;
+    border-right: 0.1px solid rgba(255, 255, 255, 0.185);
 }
 .form-value {
-    flex: 6;    
+    flex: 6;
+    display: flex;
+    justify-content: space-between;
 }
-.form-value label{
+.error-field p {
+    color: rgb(202, 4, 4);
+    font-size: 14px;
+    margin-right:10px;
+}
+.form-value label {
     padding-right: 20px;
     padding-left: 3px;
 }
-.value1 input{
-    width: 80%;
+.value1 input {
+    /* width: 80%; */
     height: 20px;
 }
-.skills-value{
+.skills-value {
     display: flex;
 }
-.country-value select{
+.country-value select {
     width: 100px;
 }
-.row-signup{
+.row-signup {
     text-align: end;
     margin-right: 30px;
 }
-.row-signup button{
-    padding: .5rem 1.2rem;
+.row-signup button {
+    padding: 0.5rem 1.2rem;
     background-color: rgba(255, 255, 255, 0.705);
     color: black;
     font-size: 12px;
     border-radius: 5px;
     cursor: pointer;
 }
-.form-body .form-row input,select{
-    background-color:transparent;
+.form-body .form-row input,
+select {
+    background-color: transparent;
     border: none;
 }
-input:focus{
-    outline: none ; 
+input:focus {
+    outline: none;
 }
-input :checked{
+input :checked {
     background-color: brown;
 }
-select option{
+select option {
     background-color: black;
 }
