@@ -26,13 +26,13 @@ function App() {
         <div className="app-container">
             {!user.newUser && !user.existingUser && (
                 <div className="home">
-                    <h1>Welcome to ____</h1>
+                    <h1>Welcome to __________</h1>
                     <p>This platform is for creative people to share thier knowledge</p>
                     <button name="newUser" value={user.newUser} onClick={handleToggle}>
-                        New User
+                        New User?
                     </button>
                     <button name="existingUser" value={user.existingUser} onClick={handleToggle}>
-                        Existing user
+                        Existing user?
                     </button>
                 </div>
             )}
