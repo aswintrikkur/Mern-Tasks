@@ -4,7 +4,7 @@ import { Signup } from "./components/Signup";
 import { Login } from "./components/Login";
 
 function App() {
-    // state
+    // state8
     const [user, setUser] = useState({
         newUser: false,
         existingUser: false,

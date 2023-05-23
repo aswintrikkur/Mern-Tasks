@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 export function Signup({ closeButton }) {
-    // ************************************state declaration************************************
+    // ---------------------------------state declaration----------------------
     const [field, setField] = useState({
         firstName: "",
         email: "",
@@ -19,15 +19,17 @@ export function Signup({ closeButton }) {
         password: false,
     });
 
-    //                                       function definition
+    //                                ...........function definition.............
     //for handling input fields (onChange)
     const handleChange = (event) => {
         if (event.target.name === "skills") {
             let newSkills = field.skills; //doubt?????? why assiging 'field.skills'
             if (event.target.checked) {
                 newSkills.push(event.target.value); //to add element when checked
+                // newSkills = [...field.skills, event.target.value];   //gives same result as push
             } else {
                 newSkills.splice(field.skills.indexOf(event.target.value), 1); //to  remove when un-checked
+                // newSkills = field.skills.filter((prev) => prev !== event.target.value); //give same result as splice.
             }
             setField((prev) => ({ ...prev, [event.target.name]: newSkills }));
             return;
@@ -39,14 +41,14 @@ export function Signup({ closeButton }) {
     //for handling form submit
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (isFormValidOnSubmit(event)) {
+        if (isFormValidOnSubmit()) {
             console.log("form is Valid");
             return;
         }
         console.log("form is  Invalid");
     };
 
-    //               form validation.......        Basic solution
+    //               form validation.... onSubmit ......   Basic solution
     // const isFormValid = () => {
     //     if (field.firstName === "") {
     //         setErrorField((prev) => ({
@@ -63,8 +65,8 @@ export function Signup({ closeButton }) {
     //     }
     // };
 
-    /*               form validation.......        Best solution...... */
-    const isFormValidOnSubmit = (event) => {
+    /*               form validation... onSubmit  ......   Better solution...... */
+    const isFormValidOnSubmit = () => {
         let error = {
             firstName: false,
             email: false,
@@ -82,16 +84,28 @@ export function Signup({ closeButton }) {
         if (field.gender === "") {
             error.gender = true;
         }
-        if (field.skills !== event.target.checked) {
+        if (field.skills.length === 0) {
             error.skills = true;
         }
-        if (field.country === "") {
+        if (field.country === "" || field.country === "select") {
             error.country = true;
         }
         if (field.password === "") {
             error.password = true;
         }
         setErrorField(error);
+
+        if (Object.values(error).some((prev) => prev === true)) {
+            return false;
+        } else {
+            return true;
+        }
+    };
+
+    //.....form validation.......... onBlur
+    const isFormValidOnBlur = (event) => {
+        const { name, value } = event.target; //de-construction
+        setErrorField((prev) => ({ ...prev, [name]: value === "" ? true : false })); // Use [] , if we need to update the value key. Otherwise it'll be a string.
     };
 
     //form closing btn handling. Update the state in the App.jsx
@@ -102,8 +116,8 @@ export function Signup({ closeButton }) {
     return (
         <div>
             <form onSubmit={handleSubmit} className="container">
-                <div className="close-btn">
-                    <button name="existingUser" onClick={closeForm}>
+                <div className="close-btn" /* close button */>
+                    <button type="reset" name="existingUser" onClick={closeForm}>
                         X
                     </button>
                 </div>
@@ -114,7 +128,13 @@ export function Signup({ closeButton }) {
                             <label htmlFor="firstName">First Name</label>
                         </div>
                         <div className="form-value value1">
-                            <input type="text" id="firstName" name="firstName" onChange={handleChange} />
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="firstName"
+                                onChange={handleChange}
+                                onBlur={isFormValidOnBlur}
+                            />
                             <div className="error-field">{errorField.firstName && <p>First name is required</p>}</div>
                         </div>
                     </div>
@@ -124,7 +144,7 @@ export function Signup({ closeButton }) {
                             <label htmlFor="email">Email</label>
                         </div>
                         <div className="form-value value1">
-                            <input type="text" id="email" name="email" onChange={handleChange} />
+                            <input type="text" id="email" name="email" onChange={handleChange} onBlur={isFormValidOnBlur} />
                             <div className="error-field">{errorField.email && <p>Email is required</p>}</div>
                         </div>
                     </div>
@@ -222,7 +242,7 @@ export function Signup({ closeButton }) {
                     </div>
 
                     <div className=" row-signup" /* sign-up btn */>
-                        <button>Signup</button>
+                        <button type="submit">Signup</button>
                     </div>
                 </div>
             </form>
