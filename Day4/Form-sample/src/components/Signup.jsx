@@ -20,10 +20,12 @@ export function Signup({ closeButton }) {
     });
 
     //                                ...........function definition.............
+
     //for handling input fields (onChange)
     const handleChange = (event) => {
         if (event.target.name === "skills") {
-            let newSkills = field.skills; //doubt?????? why assiging 'field.skills'
+            //handling checkbox
+            let newSkills = field.skills;
             if (event.target.checked) {
                 newSkills.push(event.target.value); //to add element when checked
                 // newSkills = [...field.skills, event.target.value];   //gives same result as push
@@ -34,8 +36,11 @@ export function Signup({ closeButton }) {
             setField((prev) => ({ ...prev, [event.target.name]: newSkills }));
             return;
         }
-        setField((prev) => ({ ...prev, [event.target.name]: event.target.value }));
+        setField((prev) => ({ ...prev, [event.target.name]: event.target.value })); //handling other input fields
+
+        isFormValidOnBlur(event); //invoking onBlur validation inside onChange
     };
+
     console.log(field);
 
     //for handling form submit
@@ -227,7 +232,7 @@ export function Signup({ closeButton }) {
                             <label htmlFor="password">password</label>
                         </div>
                         <div className="form-value value1">
-                            <input type="password" id="password" name="password" onChange={handleChange} />
+                            <input type="password" id="password" name="password" onChange={handleChange} onBlur={isFormValidOnBlur} />
                             <div className="error-field">{errorField.password && <p>password is required</p>}</div>
                         </div>
                     </div>
