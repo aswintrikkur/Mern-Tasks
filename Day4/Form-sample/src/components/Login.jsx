@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { TextInput } from "./TextInput/TextInput";
 
 export function Login({ closeButton }) {
     //                            ---------------- state declaration ------------------
@@ -11,7 +12,6 @@ export function Login({ closeButton }) {
         email: false,
         password: false,
     });
-
 
     //              .............................function definitions.....................
     //form closing button handling
@@ -74,7 +74,27 @@ export function Login({ closeButton }) {
 
                 <h2>Login </h2>
                 <div className="form-body">
-                    <div className="form-row" /* Email */>
+                    <TextInput
+                        handleChange={handleChange}
+                        isFormValidOnBlur={isFormValidOnBlur}
+                        errorField={errorField.email}
+                        label="Email"
+                        type="text"
+                        id="email"
+                        name="email"
+                    />
+                    <TextInput
+                        handleChange={handleChange}
+                        isFormValidOnBlur={isFormValidOnBlur}
+                        errorField={errorField.password}
+                        label="Passworddd"
+                        type="password"
+                        id="password"
+                        name="password"
+                    />
+
+                    {/* these input fields re-written using components.. So these input fields no-longer required */}
+                    {/* <div className="form-row">
                         <div className="form-key">
                             <label htmlFor="email">Email</label>
                         </div>
@@ -83,8 +103,7 @@ export function Login({ closeButton }) {
                             <div className="error-field">{errorField.email && <p>Email is required</p>}</div>
                         </div>
                     </div>
-
-                    <div className="form-row" /* password */>
+                    <div className="form-row" >
                         <div className="form-key">
                             <label htmlFor="password">password</label>
                         </div>
@@ -98,7 +117,7 @@ export function Login({ closeButton }) {
                             />
                             <div className="error-field">{errorField.password && <p>password is required</p>}</div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className=" row-signup" /*Login button */>
                         <button type="submit">Login</button>
