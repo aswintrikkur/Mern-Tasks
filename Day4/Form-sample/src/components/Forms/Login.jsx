@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { TextInput } from "./TextInput/TextInput";
+import { TextInput } from "../TextInput/TextInput";
 
 export function Login({ closeButton }) {
     //                            ---------------- state declaration ------------------

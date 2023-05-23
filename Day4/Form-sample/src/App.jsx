@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import { Signup } from "./components/Signup";
-import { Login } from "./components/Login";
+import { Login } from "./components/Forms/Login";
+import { Signup } from "./components/Forms/Signup";
 
 function App() {
     //                                    ------state-----
