@@ -232,7 +232,13 @@ export function Signup({ closeButton }) {
                             <label htmlFor="password">password</label>
                         </div>
                         <div className="form-value value1">
-                            <input type="password" id="password" name="password" onChange={handleChange} onBlur={isFormValidOnBlur} />
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                onChange={handleChange}
+                                onBlur={isFormValidOnBlur}
+                            />
                             <div className="error-field">{errorField.password && <p>password is required</p>}</div>
                         </div>
                     </div>

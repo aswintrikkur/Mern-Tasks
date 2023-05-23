@@ -4,19 +4,20 @@ import { Signup } from "./components/Signup";
 import { Login } from "./components/Login";
 
 function App() {
-    // state8
+    //                                    ------state-----
     const [user, setUser] = useState({
         newUser: false,
         existingUser: false,
     });
 
-    //function declaration
+    //                          ----------function definitions---------------
     const handleToggle = (event) => {
+        /* form handling(open-close) */
         if (event == false) {
             // console.log(event);
-            setUser({ newUser: false, existingUser: false });
+            setUser({ newUser: false, existingUser: false }); //form close
         } else {
-            setUser({ ...user, [event.target.name]: event.target.value == "false" ? true : false });
+            setUser({ ...user, [event.target.name]: event.target.value == "false" ? true : false }); //form open
         }
     };
     console.log(user);
